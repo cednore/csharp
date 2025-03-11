@@ -41,6 +41,8 @@ const ProductList: React.FC = () => {
         <div className="products-grid">
           {products.map((product) => (
             <div key={product.id} className="product-card">
+              {/* TODO: If the backend provides image URLs, uncomment this line */}
+              {/* <img src={product.image} alt={product.name} className="product-image" /> */}
               <h3>{product.name}</h3>
               <p className="description">{product.description}</p>
               <p className="price">${product.price.toFixed(2)}</p>

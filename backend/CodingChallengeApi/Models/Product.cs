@@ -8,5 +8,6 @@ namespace CodingChallengeApi.Models
         public decimal Price { get; set; }
         public int StockQuantity { get; set; }
         public string Category { get; set; } = string.Empty;
+        public string? ImageUrl { get; set; } // Optional image URL that could be added by the candidate
     }
 } 

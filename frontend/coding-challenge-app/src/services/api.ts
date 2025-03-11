@@ -7,6 +7,7 @@ export interface Product {
   price: number;
   stockQuantity: number;
   category: string;
+  image?: string; // Optional image URL that could be added by the candidate
 }
 
 export const fetchProducts = async (): Promise<Product[]> => {

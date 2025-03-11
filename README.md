@@ -9,7 +9,7 @@ This is a simple fullstack coding challenge designed to assess a candidate's exp
 
 ## Challenge Description
 
-The candidate should work on the backend to create APIs that fetch data from external sources and return refined data through endpoints. The React frontend will consume these endpoints to display the data.
+The main focus of this challenge is on the backend implementation. The candidate should work on the backend to create APIs that fetch data from the Fake Store API and return refined data through endpoints. The React frontend will consume these endpoints to display the data.
 
 ## Getting Started
 
@@ -50,19 +50,19 @@ The candidate should work on the backend to create APIs that fetch data from ext
 
 ## Tasks for the Candidate
 
-### Backend Tasks
+### Backend Tasks (Primary Focus)
 
-1. Modify the `ProductService.cs` to fetch real product data from an external API (e.g., [Fake Store API](https://fakestoreapi.com/products))
-2. Implement data transformation to match the expected Product model
-3. Add error handling and appropriate logging
+1. Modify the `ProductService.cs` to fetch real product data from the Fake Store API
+2. Implement data transformation to map the API response to our Product model
+3. Add proper error handling and logging
 4. (Optional) Implement caching to improve performance
 
-### Frontend Tasks
+### Frontend Tasks (Secondary Focus)
 
-1. Enhance the product list UI with additional features (filtering, sorting, etc.)
-2. Implement a product detail view when clicking on a product
-3. Add loading states and error handling
-4. (Optional) Implement a simple shopping cart feature
+1. Ensure the frontend correctly consumes the backend API
+2. Display product images from the API
+3. Format the price with proper currency symbol
+4. (Optional) Add a simple filter to show products by category
 
 ## Evaluation Criteria
 
@@ -70,5 +70,5 @@ The candidate should work on the backend to create APIs that fetch data from ext
 - Problem-solving approach
 - API design and implementation
 - Error handling
-- UI/UX considerations
-- Performance optimizations 
+- Data transformation and mapping
+- Performance considerations 

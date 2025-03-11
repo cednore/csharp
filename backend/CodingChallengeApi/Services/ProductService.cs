@@ -25,8 +25,19 @@ namespace CodingChallengeApi.Services
 
             try
             {
-                // This is a mock external API call that the candidate would replace with a real API
-                // For the challenge, they could use a real public API like https://fakestoreapi.com/products
+                // TODO: Replace this mock implementation with a real API call to Fake Store API
+                // API Endpoint: https://fakestoreapi.com/products
+                // Use the _httpClient to make the API call
+                
+                // Example of how to make an HTTP request:
+                // var response = await _httpClient.GetAsync("https://fakestoreapi.com/products");
+                // response.EnsureSuccessStatusCode();
+                // var content = await response.Content.ReadAsStringAsync();
+                
+                // TODO: Deserialize the JSON response and map it to our Product model
+                // You'll need to transform the data from the Fake Store API format to our Product model
+                
+                // For now, we're using mock data
                 _cachedProducts = GenerateMockProducts();
                 
                 // Simulate network delay

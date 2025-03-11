@@ -29,29 +29,18 @@ This is the frontend portion of the fullstack coding challenge. It's a React Typ
 
 ## Challenge Tasks
 
-1. Enhance the product list UI with additional features:
-   - Add filtering by category
-   - Add sorting by price (low to high, high to low)
-   - Add search functionality
+1. Basic frontend tasks (if time permits):
+   - Display product images from the API
+   - Format the price with proper currency symbol
+   - Add a simple filter to show products by category
 
-2. Implement a product detail view:
-   - Create a new component for displaying product details
-   - Add routing to navigate between the product list and detail views
-   - Fetch product details from the backend API
-
-3. Improve error handling and loading states:
-   - Add more informative error messages
-   - Implement loading indicators or skeletons
-
-4. (Optional) Implement a simple shopping cart feature:
-   - Add "Add to Cart" buttons to products
-   - Create a cart component to display selected items
-   - Implement basic cart functionality (add, remove, update quantity)
+2. Focus on making sure the frontend correctly consumes the backend API:
+   - Ensure the API connection is working properly
+   - Handle any data transformation needed on the frontend
+   - Make sure error states are handled appropriately
 
 ## Tips
 
 - The current implementation already includes basic error handling and loading states
-- Focus on improving the user experience
-- Consider using React Router for navigation between views
-- Think about state management for more complex features like the shopping cart
-- Pay attention to responsive design 
+- The main focus of this challenge is on the backend implementation
+- The frontend is mainly to verify that your backend API works correctly 

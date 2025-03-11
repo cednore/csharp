@@ -31,22 +31,47 @@ This is the backend portion of the fullstack coding challenge. It's a C# Web API
 
 ## Challenge Tasks
 
-1. Modify the `ProductService.cs` to fetch real product data from an external API instead of using mock data
-   - Suggested API: [Fake Store API](https://fakestoreapi.com/products)
-   - Alternative: [Dummy JSON](https://dummyjson.com/products)
+1. Modify the `ProductService.cs` to fetch real product data from the Fake Store API:
+   - API Endpoint: `https://fakestoreapi.com/products`
+   - Sample response structure:
+   ```json
+   {
+     "id": 1,
+     "title": "Fjallraven - Foldsack No. 1 Backpack",
+     "price": 109.95,
+     "description": "Your perfect pack for everyday use...",
+     "category": "men's clothing",
+     "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+     "rating": {
+       "rate": 3.9,
+       "count": 120
+     }
+   }
+   ```
 
-2. Implement data transformation to map the external API response to our Product model
+2. Implement data transformation to map the Fake Store API response to our Product model:
+   - Map `title` to `Name`
+   - Map `description` to `Description`
+   - Map `price` to `Price`
+   - You can set a default value for `StockQuantity` or use `rating.count`
+   - Map `category` to `Category`
 
-3. Add proper error handling and logging
+3. Add proper error handling and logging:
+   - Handle HTTP request failures
+   - Log errors with appropriate context
+   - Return meaningful error responses to the client
 
-4. (Optional) Implement caching to improve performance
+4. (Optional) Implement caching to improve performance:
+   - The service already has a basic caching mechanism
+   - Improve it with a more sophisticated approach (e.g., memory cache with expiration)
 
-5. (Optional) Add additional endpoints for filtering products by category or searching by name
+5. (Optional) Add additional endpoints:
+   - Filtering products by category
+   - Searching products by name
 
 ## Tips
 
-- The current implementation uses mock data in `ProductService.cs`
-- You'll need to replace this with actual HTTP calls to an external API
-- Consider using HttpClient that's already injected into the service
+- Use the HttpClient that's already injected into the ProductService
+- Consider using System.Text.Json for deserializing the API response
 - Make sure to handle API errors gracefully
 - Think about how to optimize the API for performance 
