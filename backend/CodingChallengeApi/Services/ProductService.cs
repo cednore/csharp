@@ -1,4 +1,5 @@
 using CodingChallengeApi.Models;
+using CodingChallengeApi.ViewModel;
 using System.Text.Json;
 
 namespace CodingChallengeApi.Services
@@ -25,20 +26,42 @@ namespace CodingChallengeApi.Services
 
             try
             {
-                // TODO: Replace this mock implementation with a real API call to Fake Store API
-                // API Endpoint: https://fakestoreapi.com/products
-                // Use the _httpClient to make the API call
-                
-                // Example of how to make an HTTP request:
-                // var response = await _httpClient.GetAsync("https://fakestoreapi.com/products");
-                // response.EnsureSuccessStatusCode();
-                // var content = await response.Content.ReadAsStringAsync();
-                
-                // TODO: Deserialize the JSON response and map it to our Product model
-                // You'll need to transform the data from the Fake Store API format to our Product model
-                
-                // For now, we're using mock data
-                _cachedProducts = GenerateMockProducts();
+
+                var productList = new List<ProductViewModel>();
+                _logger.LogInformation("Fetching the data of products from external fake store API");
+                productList = await _httpClient.GetAsync("https://fakestoreapi.com/products");
+                var productDBList = new List<Product>();
+                if (productList != null)
+                {
+                    _logger.LogInformation("Successfully fetched data of products");
+                    var product = new Product();
+                    foreach (var item in productList)
+                    {
+                        product.Id = item.Id;
+                        product.Name = item.Name;
+                        product.Description = item.Description;
+                        product.Price = item.Price;
+                        product.StockQuantity = item.StockQuantity;
+                        product.Category = item.Category;
+                        product.StoImageUrlckQuantity = item.StoImageUrlckQuantity;
+                    }
+                    _logger.LogInformation("Adding data to product model from list of product");
+                    productDBList.Add(product);
+                }
+                    // TODO: Replace this mock implementation with a real API call to Fake Store API
+                    // API Endpoint: https://fakestoreapi.com/products
+                    // Use the _httpClient to make the API call
+
+                    // Example of how to make an HTTP request:
+                    // var response = await _httpClient.GetAsync("https://fakestoreapi.com/products");
+                    // response.EnsureSuccessStatusCode();
+                    // var content = await response.Content.ReadAsStringAsync();
+
+                    // TODO: Deserialize the JSON response and map it to our Product model
+                    // You'll need to transform the data from the Fake Store API format to our Product model
+
+                    // For now, we're using mock data
+                    _cachedProducts = GenerateMockProducts();
                 
                 // Simulate network delay
                 await Task.Delay(300);
